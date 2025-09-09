@@ -14,6 +14,10 @@ Route::any('/any', function() {
     return "Permite todo tipo de acesso http (put, delete, get, post)";
 });
 
-Route::match('/match', function(){
-    return "Permite apenas acessos definidos";
+// Route::match('/match', function(){
+//     return "Permite apenas acessos definidos";
+// });
+
+Route::get('/produto/{id}/{cat?}', function($id, $cat = ''){
+    return "O id do produto é: " . $id . "<br>" . "A categoria é: " . $cat;
 });
