@@ -121,6 +121,13 @@ Route::group([
 
 // CONTROLLERS
 
-Route::get('/', [ProdutoController::class, 'index'])->name('produto.index');
+// Route::get('/', [ProdutoController::class, 'index'])->name('produto.index');
 
-Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show');
+// Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show');
+
+// ----------------------------------------------------
+
+
+// CONTROLLERS COM RESOURCE
+
+Route::resource('produtos', ProdutoController::class);
