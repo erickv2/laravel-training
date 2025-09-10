@@ -35,9 +35,9 @@ Route::any('/any', function () {
 
 // PARAMETROS
 
-Route::get('/produto/{id}/{cat?}', function ($id, $cat = '') {
-    return "O id do produto é: " . $id . "<br>" . "A categoria é: " . $cat;
-});
+// Route::get('/produto/{id}/{cat?}', function ($id, $cat = '') {
+//     return "O id do produto é: " . $id . "<br>" . "A categoria é: " . $cat;
+// });
 
 // ----------------------------------------------------
 
@@ -121,4 +121,6 @@ Route::group([
 
 // CONTROLLERS
 
-Route::get('/', [ProdutoController::class, 'index']);
+Route::get('/', [ProdutoController::class, 'index'])->name('produto.index');
+
+Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show');
