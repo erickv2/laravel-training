@@ -11,7 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::dropIfExists('product');
+        Schema::table('products', function(Blueprint $table){
+            $table->renameColumn('nomee', 'nome');
+            $table->dropColumn('nomeCompleto');
+        });
     }
 
     /**
